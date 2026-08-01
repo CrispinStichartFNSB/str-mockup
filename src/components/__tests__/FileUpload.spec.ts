@@ -3,7 +3,7 @@ import { mount } from '@vue/test-utils'
 import FileUpload from '../FileUpload.vue'
 
 const acceptedTypes = ['application/pdf', 'image/jpeg', 'image/png']
-const maxSizeBytes = 10 * 1024 * 1024
+const maxSizeBytes = 100 * 1024 * 1024
 
 function mountUploader(modelValue: File | null = null) {
   return mount(FileUpload, {

@@ -21,8 +21,8 @@ const unitAddresses: PropertyAddress[] = [
 
 export const demoProperty: PropertyFixture = {
   id: 'property-123-main',
-  pan: 'PAN-123-456',
-  ownerName: 'Jordan Lee',
+  pan: '1234567',
+  ownerName: 'Barack Obama',
   primaryAddress: unitAddresses[0]!,
   unitAddresses,
   photoUrl: mockHouseUrl,
