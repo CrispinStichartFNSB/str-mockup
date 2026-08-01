@@ -10,6 +10,7 @@ import type {
 } from '@/types/application'
 
 const unitLabUrl = `${import.meta.env.BASE_URL}unit-selection.html`
+const addressUnitLabUrl = `${import.meta.env.BASE_URL}address-unit-selection.html`
 
 const MAX_FILE_SIZE = 10 * 1024 * 1024
 const ACCEPTED_FILE_TYPES = ['application/pdf', 'image/jpeg', 'image/png']
@@ -130,6 +131,7 @@ function continueFromOwnership() {
       </a>
       <nav class="header-nav" aria-label="Demo pages">
         <a class="header-link" :href="unitLabUrl">Unit component lab</a>
+        <a class="header-link" :href="addressUnitLabUrl">Address-first lab</a>
         <span class="demo-badge">Interactive demo</span>
       </nav>
     </header>

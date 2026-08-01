@@ -24,6 +24,15 @@ async function reachAuthorization(wrapper: VueWrapper) {
 }
 
 describe('STR permit application', () => {
+  it('links to both standalone unit-selection labs', () => {
+    const wrapper = mount(App)
+    const links = wrapper.findAll('nav[aria-label="Demo pages"] a')
+
+    expect(links.map((link) => link.text())).toEqual(['Unit component lab', 'Address-first lab'])
+    expect(links[0]!.attributes('href')).toContain('unit-selection.html')
+    expect(links[1]!.attributes('href')).toContain('address-unit-selection.html')
+  })
+
   it('reveals property search only after valid required contact information', async () => {
     const wrapper = mount(App)
 
