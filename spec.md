@@ -61,3 +61,20 @@ Technical considerations:
 - make sure everything is accessible
 - add comments when needed to clarify any tricky or unusual code, or to explain that a specific choice was made due to a requirement I specified
 - this project was created from the official vue starting template; feel free do delete/overwrite anything you see.
+- for the component tests, only test behavior, not presentation.
+
+For demo data, start with just one example property that has 5 address. There should be a main house address of `123 Main St`, and the others should be things like:
+
+```
+123 Main St
+Cabin A
+
+123 Main St
+Unit 14
+
+etc.
+```
+
+For showing off auto complete, have a few other `Main St` addresses. Don't include the unit addresses -- in the real system we know whether an address is primary or not, and will be filtering out the unit addresses.
+
+If the user selects one of those other properties, show a message saying "no demo data; use `123 Main St`."
