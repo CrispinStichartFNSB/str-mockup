@@ -731,6 +731,188 @@ footer {
   box-shadow: 0 10px 35px rgba(25, 55, 65, 0.06);
 }
 
+.address-unit-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.25rem;
+  color: var(--navy);
+  background: var(--sand);
+  border-radius: 8px;
+}
+.address-unit-summary div {
+  display: flex;
+  flex-direction: column;
+}
+.address-unit-summary strong {
+  font-size: 1.25rem;
+}
+.address-unit-summary span {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+.address-unit-summary progress {
+  width: min(50%, 300px);
+  height: 12px;
+  accent-color: var(--teal);
+}
+.address-unit-list {
+  display: grid;
+  gap: 1rem;
+}
+.address-unit-card {
+  min-width: 0;
+  padding: 1.2rem;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+}
+.address-unit-card legend {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0.4rem;
+  color: var(--navy);
+}
+.address-unit-card legend span {
+  color: var(--teal);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.address-unit-card legend strong {
+  font-family: Georgia, serif;
+  font-size: 1.2rem;
+}
+.address-mode-options {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.6rem;
+}
+.address-mode-options label {
+  position: relative;
+}
+.address-mode-options input {
+  position: absolute;
+  opacity: 0;
+}
+.address-mode-options span {
+  display: grid;
+  min-height: 52px;
+  padding: 0.65rem;
+  place-items: center;
+  text-align: center;
+  border: 1px solid #aebcbd;
+  border-radius: 6px;
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+.address-mode-options input:checked + span {
+  color: #fff;
+  background: var(--navy);
+  border-color: var(--navy);
+}
+.address-mode-options input:disabled + span {
+  color: #7f8c8c;
+  background: #eef1f0;
+  cursor: not-allowed;
+}
+.address-mode-options input:focus-visible + span {
+  outline: 3px solid #e0aa3e;
+  outline-offset: 3px;
+}
+.address-unit-controls {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+  margin-top: 1rem;
+  background: #f6f8f6;
+  border-radius: 7px;
+}
+.house-control {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+}
+.house-control input {
+  width: 20px;
+  min-height: 20px;
+  margin-top: 0.1rem;
+  accent-color: var(--teal);
+}
+.house-control span {
+  display: flex;
+  flex-direction: column;
+}
+.house-control small {
+  margin-top: 0.15rem;
+  color: var(--muted);
+}
+.room-count-control {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+}
+.room-count-control label {
+  font-weight: 700;
+}
+.number-stepper {
+  display: grid;
+  grid-template-columns: 40px 64px 40px;
+  flex: none;
+}
+.number-stepper input {
+  min-height: 40px;
+  padding-inline: 0.25rem;
+  text-align: center;
+  border-radius: 0;
+}
+.number-stepper button {
+  min-height: 40px;
+  padding: 0;
+  color: var(--teal-dark);
+  background: #fff;
+  border: 1px solid #9daeb1;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+.number-stepper button:first-child {
+  border-right: 0;
+  border-radius: 6px 0 0 6px;
+}
+.number-stepper button:last-child {
+  border-left: 0;
+  border-radius: 0 6px 6px 0;
+}
+.number-stepper button:disabled {
+  color: #96a0a1;
+  background: #e8eceb;
+}
+.inline-confirmation {
+  padding: 1rem;
+  margin-top: 1rem;
+  background: #fff6df;
+  border-left: 4px solid #c88c19;
+  border-radius: 5px;
+}
+.inline-confirmation p {
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+.inline-confirmation > div {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+.inline-confirmation .primary-button {
+  min-height: 40px;
+  padding-block: 0.45rem;
+}
+
 @media (max-width: 650px) {
   .site-header {
     padding-inline: 1rem;
@@ -773,6 +955,24 @@ footer {
   }
   .section-intro {
     margin-left: 0;
+  }
+  .address-mode-options {
+    grid-template-columns: 1fr;
+  }
+  .address-mode-options span {
+    min-height: 44px;
+  }
+  .room-count-control,
+  .address-unit-summary {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .address-unit-summary progress {
+    width: 100%;
+  }
+  .inline-confirmation > div {
+    align-items: stretch;
+    flex-direction: column;
   }
 }
 
