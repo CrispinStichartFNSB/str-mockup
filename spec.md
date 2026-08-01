@@ -12,7 +12,7 @@ The first step will be Applicant Contact Information.
 - phone number (optional)
 - email
 
-Email and phone should be validated with whatever teh industry standard regex is.
+Email and phone should be validated with whatever the industry standard regex is.
 
 Once they enter at least a name and email, the button to continue to the next section will be enabled.
 

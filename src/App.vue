@@ -9,6 +9,8 @@ import type {
   UnitSelection as UnitSelectionModel,
 } from '@/types/application'
 
+const unitLabUrl = `${import.meta.env.BASE_URL}unit-selection.html`
+
 const MAX_FILE_SIZE = 10 * 1024 * 1024
 const ACCEPTED_FILE_TYPES = ['application/pdf', 'image/jpeg', 'image/png']
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -126,7 +128,10 @@ function continueFromOwnership() {
         <span aria-hidden="true" class="service-mark-icon">P</span>
         <span>Permit Services</span>
       </a>
-      <span class="demo-badge">Interactive demo</span>
+      <nav class="header-nav" aria-label="Demo pages">
+        <a class="header-link" :href="unitLabUrl">Unit component lab</a>
+        <span class="demo-badge">Interactive demo</span>
+      </nav>
     </header>
 
     <main id="main-content" class="page-container">

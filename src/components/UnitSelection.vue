@@ -80,6 +80,16 @@ watch(
 
 watch(isValid, (valid) => emit('validity-change', valid), { immediate: true })
 
+watch(
+  () => addresses.map((address) => address.id),
+  (availableAddressIds) => {
+    const available = new Set(availableAddressIds)
+    for (const unit of units.value) {
+      if (unit.addressId && !available.has(unit.addressId)) unit.addressId = ''
+    }
+  },
+)
+
 function finishDemo() {
   window.alert('demo over')
 }

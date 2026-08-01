@@ -14,4 +14,12 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
+  build: {
+    rollupOptions: {
+      input: {
+        application: fileURLToPath(new URL('./index.html', import.meta.url)),
+        unitSelectionLab: fileURLToPath(new URL('./unit-selection.html', import.meta.url)),
+      },
+    },
+  },
 })

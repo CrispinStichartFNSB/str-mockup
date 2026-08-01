@@ -131,4 +131,17 @@ describe('UnitSelection', () => {
 
     expect(paymentButton(wrapper).attributes('disabled')).toBeDefined()
   })
+
+  it('clears a selected address when that address is removed from the prop', async () => {
+    const wrapper = mountUnits()
+    await setUnit(wrapper, 0, 'whole-house', 'cabin-a')
+    expect(paymentButton(wrapper).attributes('disabled')).toBeUndefined()
+
+    await wrapper.setProps({
+      addresses: demoProperty.unitAddresses.filter((address) => address.id !== 'cabin-a'),
+    })
+
+    expect((wrapper.get('select[id^="unit-address"]').element as HTMLSelectElement).value).toBe('')
+    expect(paymentButton(wrapper).attributes('disabled')).toBeDefined()
+  })
 })

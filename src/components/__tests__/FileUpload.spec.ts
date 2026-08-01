@@ -58,7 +58,7 @@ describe('FileUpload', () => {
 
     await chooseFile(wrapper, file)
 
-    expect(wrapper.text()).toContain('Choose a file smaller than 10 MB.')
+    expect(wrapper.text()).toContain(`Choose a file smaller than ${maxSizeBytes / 1024 / 1024} MB.`)
     expect(wrapper.emitted('update:modelValue')).toBeUndefined()
   })
 
